@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app_1">
+        {{message}}
+    </div>
+    <div id="app_2">
+        <span v-bind:title="message">
+            내 위에 잠시 마우스를 올리면 바인딩 된 title을 볼 수 있습니다.
+        </span>
+    </div>
+    <div id="app_3">
+        <p v-if="seen">이제 나를 볼 수 있어요.</p>
+    </div>
+    <div id="app_4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+    <div id="app_5">
+        <p id="asd">{{ message }}</p>
+        <button v-on:click="reverseMessage">메시지 뒤집기</button>
+    </div>
+    <div id="app_6">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+    <ol id="app_7">
+        <!-- todo-item 컴포넌트의 인스턴스 만들기 -->
+        <todo-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:id="item.id"
+        v-bind:key="item.id" 
+        ></todo-item>
+        <!-- key는 프라이머리키-->
+        <!-- 보통 포 쓸때 key 같이 써 그냥 시발아-->
+    </ol>
+</body>
+</html>
+
+<!-- 직접 다운받아 사용하는 경우 -->
+<script src="vue.js"></script>
+<!-- 프로토 타이핑이나 학습목적인경우-->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<!-- 프로덕션 환경 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script> -->
+
+<script src="js.js" type="text/javascript" rel="script"></script>
